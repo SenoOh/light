@@ -1,9 +1,12 @@
 import paho.mqtt.client as mqtt
+import sys
+
+args = sys.argv
 
 # 定数定義
 host = '127.0.0.1'
 port = 1883
-topic = 'dt/pinot/v1/ou/eng4/room106/pinot-light001/light'
+topic = 'cmd/pinot/v1/nursinghome/' + args[1] + '/room' + args[2] + '/pinot-light' + args[2] + '/light' + args[2]
 
 # 接続
 def on_connect(client, userdata, flags, rc):
