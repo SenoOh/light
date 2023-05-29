@@ -1,6 +1,5 @@
 import paho.mqtt.client as mqtt
 import sys
-
 args = sys.argv
 
 # 定数定義
