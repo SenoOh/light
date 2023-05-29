@@ -1,6 +1,12 @@
 #!/bin/bash
 
+topic="cmd/light"
 mosquitto_sub -t "cmd/light" | while read -r payload
 do
-echo "Rx light: ${payload}"
+if [ ${payload} == "ON" ]
+then
+echo "topic: ${topic} | light status: FLASH"
+else
+echo "topic: ${topic} | light status: DARK"
+fi
 done
